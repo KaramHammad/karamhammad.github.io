@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-ar="كرم حماد | مهندس الذكاء الاصطناعي ومعالجة اللغات الطبيعية" data-en="Karam Hammad | AI & NLP Engineer">كرم حماد | مهندس الذكاء الاصطناعي ومعالجة اللغات الطبيعية</title>
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Karam's Portfolio | AI & NLP Engineer" />
+  <meta property="og:description" content="مطور ومهندس أنظمة الذكاء الاصطناعي ومعالجة اللغات الطبيعية وتطبيقات RAG." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Readex Pro & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Readex Pro', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            crimson: {
+              50: '#fef2f2',
+              100: '#fee2e2',
+              200: '#fecaca',
+              300: '#fca5a5',
+              400: '#f87171',
+              500: '#ef4444',
+              600: '#dc2626',
+              700: '#b91c1c',
+              800: '#991b1b',
+              900: '#7f1d1d',
+              950: '#450a0a',
+            },
+            ember: {
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+            },
+            obsidian: {
+              800: '#16161e',
+              900: '#0e0e13',
+              950: '#07070a',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Readex Pro', sans-serif;
+    }
+    section {
+      scroll-margin-top: 90px;
+    }
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #07070a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #dc2626, #ea580c);
+      border-radius: 3px;
+    }
+    .engineering-grid {
+      background-size: 30px 30px;
+      background-image: radial-gradient(circle, rgba(220, 38, 38, 0.12) 1px, transparent 1px);
+    }
+    .tech-card {
+      position: relative;
+      background: rgba(14, 14, 19, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(220, 38, 38, 0.15);
+      transition: all 0.25s ease-out;
+    }
+    .tech-card:hover {
+      border-color: rgba(220, 38, 38, 0.5);
+      box-shadow: 0 8px 25px -6px rgba(220, 38, 38, 0.25);
+      transform: translateY(-2px);
+    }
+    .cursor-flame {
+      display: inline-block;
+      width: 7px;
+      height: 1.1em;
+      background: #ef4444;
+      vertical-align: middle;
+      margin-inline-start: 4px;
+      animation: flameBlink 0.8s infinite;
+    }
+    @keyframes flameBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Bidirectional text safeguards */
+    [dir="auto"] { unicode-bidi: plaintext; }
+    bdi, [dir="ltr"] { unicode-bidi: isolate; }
+    input, textarea, select { text-align: start; }
+    input[type="email"], input[type="url"], input[type="tel"] { direction: ltr; text-align: left; }
+    .direction-arrow { transition: transform 0.2s ease; }
+    html[dir="ltr"] .direction-arrow { transform: scaleX(-1); }
+  </style>
+</head>
+<body class="bg-obsidian-950 text-zinc-100 engineering-grid selection:bg-crimson-600 selection:text-white">
+
+  <!-- Header Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-obsidian-950/90 backdrop-blur-md border-b border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo Identity -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded bg-gradient-to-br from-crimson-600 to-ember-600 text-white flex items-center justify-center shadow-md shadow-crimson-600/30 border border-crimson-400/30 font-mono font-bold text-sm">
+          KH
+        </div>
+        <div class="flex flex-col">
+          <span class="text-base sm:text-lg font-bold tracking-tight text-white leading-none" data-ar="ملف كرم حماد" data-en="Karam Hammad">
+            ملف كرم حماد
+          </span>
+          <span dir="ltr" class="text-[10px] font-mono text-crimson-400 mt-1 tracking-wider text-right">
+            [AI &amp; NLP Developer]
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-xs font-mono text-zinc-300">
+        <a href="#hero" class="hover:text-crimson-500 transition-colors" data-ar="// 01. الرئيسية" data-en="// 01. Home">// 01. الرئيسية</a>
+        <a href="#workflow" class="hover:text-crimson-500 transition-colors" data-ar="// 02. منهجية العمل" data-en="// 02. Methodology">// 02. منهجية العمل</a>
+        <a href="#projects" class="hover:text-crimson-500 transition-colors" data-ar="// 03. المشاريع" data-en="// 03. Projects">// 03. المشاريع</a>
+        <a href="#skills" class="hover:text-crimson-500 transition-colors" data-ar="// 04. المهارات" data-en="// 04. Skills">// 04. المهارات</a>
+        <a href="#contact" class="hover:text-crimson-500 transition-colors" data-ar="// 05. التواصل" data-en="// 05. Contact">// 05. التواصل</a>
+      </nav>
+
+      <!-- System Status & Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div dir="ltr" class="hidden sm:flex items-center gap-2 px-3 py-1 rounded bg-obsidian-900 border border-zinc-800 text-[11px] font-mono text-zinc-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>STATUS: AVAILABLE</span>
+        </div>
+
+        <!-- Language Toggle Button -->
+        <button id="langToggleBtn" aria-label="Toggle Language" class="px-2.5 h-9 rounded border border-zinc-800 bg-obsidian-900 text-crimson-400 hover:border-crimson-500 transition-all font-mono text-xs font-bold flex items-center justify-center cursor-pointer">
+          <span id="langBtnText">EN</span>
+        </button>
+
+        <button id="mobileMenuBtn" aria-label="القائمة" aria-expanded="false" class="md:hidden w-9 h-9 rounded border border-zinc-800 bg-obsidian-900 text-zinc-200 flex items-center justify-center cursor-pointer">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="hidden md:hidden bg-obsidian-900 border-b border-zinc-800 px-6 py-4 font-mono text-xs">
+      <div class="flex flex-col gap-3">
+        <a href="#hero" class="mobile-link py-1 hover:text-crimson-500" data-ar="// 01. الرئيسية" data-en="// 01. Home">// 01. الرئيسية</a>
+        <a href="#workflow" class="mobile-link py-1 hover:text-crimson-500" data-ar="// 02. منهجية العمل" data-en="// 02. Methodology">// 02. منهجية العمل</a>
+        <a href="#projects" class="mobile-link py-1 hover:text-crimson-500" data-ar="// 03. المشاريع" data-en="// 03. Projects">// 03. المشاريع</a>
+        <a href="#skills" class="mobile-link py-1 hover:text-crimson-500" data-ar="// 04. المهارات" data-en="// 04. Skills">// 04. المهارات</a>
+        <a href="#contact" class="mobile-link py-1 hover:text-crimson-500" data-ar="// 05. التواصل" data-en="// 05. Contact">// 05. التواصل</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24 sm:pt-28">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative py-12 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          
+          <!-- Bio & Technical Identity -->
+          <div class="lg:col-span-6 space-y-6 text-start">
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-crimson-500/10 border border-crimson-500/20 text-crimson-400 text-xs font-mono">
+              <i class="fa-solid fa-microchip"></i>
+              <span dir="ltr" data-ar="AI &amp; NLP Development // RAG Systems" data-en="AI &amp; NLP Development // RAG Systems">AI &amp; NLP Development // RAG Systems</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-bold tracking-tight leading-tight text-white">
+              <span data-ar="كرم حماد" data-en="Karam Hammad">كرم حماد</span>
+              <span class="block text-lg sm:text-2xl font-semibold mt-2 text-zinc-400 font-mono" data-ar="[AI &amp; NLP Developer]" data-en="[AI &amp; NLP Developer]">
+                [AI &amp; NLP Developer]
+              </span>
+            </h1>
+
+            <!-- Dynamic Focus Line -->
+            <div class="p-3 rounded bg-obsidian-900 border-s-2 border-crimson-600 text-xs sm:text-sm font-mono text-zinc-300 flex items-center gap-2">
+              <span class="text-crimson-500 font-bold">&gt;_</span>
+              <span id="dynamicFocusText" dir="auto" class="text-zinc-100"></span>
+              <span class="cursor-flame"></span>
+            </div>
+
+            <p class="text-zinc-400 text-sm sm:text-base leading-relaxed" 
+               data-ar="مهندس ومطور برمجيات متخصص في الذكاء الاصطناعي ومعالجة اللغات الطبيعية (NLP)، أعمل على بناء تطبيقات معالجة النصوص العربية، وتطوير أنظمة الاسترجاع المعزز <span dir='ltr' class='font-mono text-crimson-400 text-xs'>(RAG)</span>، وتكييف النماذج اللغوية مفتوحة المصدر باستخدام تقنيات <span dir='ltr' class='font-mono text-crimson-400 text-xs'>(PEFT / LoRA)</span> لتقديم حلول برمجية عملية ودقيقة."
+               data-en="Software developer and engineer specializing in Artificial Intelligence and Natural Language Processing (NLP). Focused on building Arabic text processing applications, developing Retrieval-Augmented Generation <span dir='ltr' class='font-mono text-crimson-400 text-xs'>(RAG)</span> systems, and adapting open-source language models using <span dir='ltr' class='font-mono text-crimson-400 text-xs'>(PEFT / LoRA)</span> to deliver practical software solutions.">
+              مهندس ومطور برمجيات متخصص في الذكاء الاصطناعي ومعالجة اللغات الطبيعية (NLP)، أعمل على بناء تطبيقات معالجة النصوص العربية، وتطوير أنظمة الاسترجاع المعزز <span dir="ltr" class="font-mono text-crimson-400 text-xs">(RAG)</span>، وتكييف النماذج اللغوية مفتوحة المصدر باستخدام تقنيات <span dir="ltr" class="font-mono text-crimson-400 text-xs">(PEFT / LoRA)</span> لتقديم حلول برمجية عملية ودقيقة.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center gap-4 pt-2 font-mono text-xs">
+              <a href="#projects" class="px-6 py-3 rounded bg-crimson-600 hover:bg-crimson-500 text-white font-semibold shadow-md shadow-crimson-600/20 transition-all flex items-center gap-2">
+                <i class="fa-solid fa-code-branch"></i>
+                <span data-ar="استعراض المشاريع" data-en="Explore Projects">استعراض المشاريع</span>
+              </a>
+              <a href="#contact" class="px-6 py-3 rounded bg-obsidian-900 border border-zinc-800 hover:border-crimson-500 text-zinc-200 font-semibold transition-all flex items-center gap-2">
+                <i class="fa-solid fa-terminal text-crimson-500"></i>
+                <span data-ar="التواصل المباشر" data-en="Direct Contact">التواصل المباشر</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Live Interactive Analyzer -->
+          <div class="lg:col-span-6">
+            <div class="rounded bg-obsidian-900 border border-zinc-800 shadow-2xl overflow-hidden text-zinc-100 text-start">
+              
+              <!-- Console Top Bar -->
+              <div class="px-4 py-2.5 bg-obsidian-950 border-b border-zinc-800 flex items-center justify-between font-mono text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-crimson-500"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-ember-500"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
+                  <span dir="ltr" class="text-zinc-400 mr-2 ml-2">nlp_parser_demo.py</span>
+                </div>
+                <span dir="ltr" class="px-2 py-0.5 rounded text-[10px] bg-crimson-500/20 text-crimson-400 border border-crimson-500/30">
+                  Interactive Demo
+                </span>
+              </div>
+
+              <!-- Console Body -->
+              <div class="p-4 space-y-4 text-xs font-mono">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <label class="text-zinc-400 text-[11px]" data-ar="// اختر عينة نصية لمعاينة التحليل اللغوي:" data-en="// Select a text sample to preview NLP parsing:">// اختر عينة نصية لمعاينة التحليل اللغوي:</label>
+                  </div>
+                  
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    <button type="button" class="nlp-sample-btn px-2.5 py-1 rounded bg-crimson-600 text-white font-medium transition-all cursor-pointer" data-index="0" data-ar="عينة 1: خبر تقني" data-en="Sample 1: Tech News">عينة 1: خبر تقني</button>
+                    <button type="button" class="nlp-sample-btn px-2.5 py-1 rounded bg-obsidian-800 hover:bg-zinc-800 text-zinc-300 font-medium transition-all cursor-pointer" data-index="1" data-ar="عينة 2: استرجاع وثائق" data-en="Sample 2: Document RAG">عينة 2: استرجاع وثائق</button>
+                    <button type="button" class="nlp-sample-btn px-2.5 py-1 rounded bg-obsidian-800 hover:bg-zinc-800 text-zinc-300 font-medium transition-all cursor-pointer" data-index="2" data-ar="عينة 3: ملخص بحثي" data-en="Sample 3: Research Note">عينة 3: ملخص بحثي</button>
+                  </div>
+
+                  <div id="simInputBox" dir="auto" class="p-3 rounded bg-obsidian-950 border border-zinc-800 text-zinc-200 leading-relaxed font-sans text-xs">
+                  </div>
+                </div>
+
+                <!-- Tokenization -->
+                <div>
+                  <div class="text-[11px] text-zinc-400 mb-1.5 flex items-center justify-between">
+                    <span data-ar="1. تقسيم النص إلى وحدات (Tokenization):" data-en="1. Text Tokenization:">1. تقسيم النص إلى وحدات (Tokenization):</span>
+                    <span id="simTokenCount" dir="ltr" class="text-crimson-400"></span>
+                  </div>
+                  <div id="simTokensContainer" dir="ltr" class="flex flex-wrap gap-1.5 p-2.5 rounded bg-obsidian-950/80 border border-zinc-800 min-h-[48px]">
+                  </div>
+                </div>
+
+                <!-- Named Entity Recognition (NER) -->
+                <div>
+                  <div class="text-[11px] text-zinc-400 mb-1.5">
+                    <span data-ar="2. استخراج الكيانات المسماة (NER):" data-en="2. Named Entity Recognition (NER):">2. استخراج الكيانات المسماة (NER):</span>
+                  </div>
+                  <div id="simNerContainer" class="flex flex-wrap gap-1.5">
+                  </div>
+                </div>
+
+                <!-- Classification Output -->
+                <div class="pt-2 border-t border-zinc-800/80 flex items-center justify-between text-[11px]">
+                  <span class="text-zinc-400" data-ar="التصنيف السياقي للنص:" data-en="Contextual Classification:">التصنيف السياقي للنص:</span>
+                  <span id="simSentimentLabel" dir="auto" class="font-bold text-crimson-400 px-2 py-0.5 rounded bg-crimson-500/10 border border-crimson-500/20"></span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURAL WORKFLOW SECTION -->
+    <section id="workflow" class="py-16 bg-obsidian-900/40 border-y border-zinc-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 text-start">
+          <div>
+            <span dir="ltr" class="text-xs font-mono text-crimson-400 block mb-1">// DEVELOPMENT WORKFLOW</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white" data-ar="منهجية العمل وبناء النماذج" data-en="Development Workflow & Model Building">منهجية العمل وبناء النماذج</h2>
+          </div>
+          <p class="text-zinc-400 text-xs sm:text-sm max-w-md" data-ar="خطوات عملية منظمة لمعالجة البيانات النصية، وتكييف النماذج اللغوية، وبناء واجهات برمجية جاهزة للاستخدام." data-en="Structured practical steps for text preprocessing, language model adaptation, and building ready-to-use APIs.">
+            خطوات عملية منظمة لمعالجة البيانات النصية، وتكييف النماذج اللغوية، وبناء واجهات برمجية جاهزة للاستخدام.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-start">
+          <!-- Step 01 -->
+          <div class="tech-card p-5 rounded">
+            <div class="flex items-center justify-between mb-4 font-mono">
+              <span dir="ltr" class="text-2xl font-bold text-crimson-500/40">01.</span>
+              <i class="fa-solid fa-database text-crimson-500"></i>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2" data-ar="تنظيف وتجهيز البيانات" data-en="Data Cleaning & Preprocessing">تنظيف وتجهيز البيانات</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed" data-ar="توحيد الحروف العربية، إزالة التشكيل والرموز غير الضرورية، وتقسيم النصوص بشكل متوازن قبل إدخالها للنماذج." data-en="Normalizing Arabic characters, removing diacritics and noise, and structuring text datasets cleanly before model ingestion.">
+              توحيد الحروف العربية، إزالة التشكيل والرموز غير الضرورية، وتقسيم النصوص بشكل متوازن قبل إدخالها للنماذج.
+            </p>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="tech-card p-5 rounded">
+            <div class="flex items-center justify-between mb-4 font-mono">
+              <span dir="ltr" class="text-2xl font-bold text-crimson-500/40">02.</span>
+              <i class="fa-solid fa-sliders text-crimson-500"></i>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2" data-ar="تكييف النماذج <bdi dir='ltr'>(Fine-Tuning)</bdi>" data-en="Model Fine-Tuning">تكييف النماذج <bdi dir='ltr'>(Fine-Tuning)</bdi></h3>
+            <p class="text-zinc-400 text-xs leading-relaxed" data-ar="استخدام تقنيات <span dir='ltr' class='font-mono text-[11px] text-zinc-300'>(LoRA / QLoRA)</span> لتدريب النماذج اللغوية على مهام محددة بكفاءة عالية واستهلاك ذاكرة <bdi dir='ltr'>VRAM</bdi> منخفض." data-en="Applying <span dir='ltr' class='font-mono text-[11px] text-zinc-300'>(LoRA / QLoRA)</span> techniques to adapt language models for specific tasks efficiently with low VRAM overhead.">
+              استخدام تقنيات <span dir="ltr" class="font-mono text-[11px] text-zinc-300">(LoRA / QLoRA)</span> لتدريب النماذج اللغوية على مهام محددة بكفاءة عالية واستهلاك ذاكرة <bdi dir='ltr'>VRAM</bdi> منخفض.
+            </p>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="tech-card p-5 rounded">
+            <div class="flex items-center justify-between mb-4 font-mono">
+              <span dir="ltr" class="text-2xl font-bold text-crimson-500/40">03.</span>
+              <i class="fa-solid fa-diagram-project text-crimson-500"></i>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2" data-ar="بناء أنظمة <bdi dir='ltr'>RAG</bdi>" data-en="Building RAG Systems">بناء أنظمة <bdi dir='ltr'>RAG</bdi></h3>
+            <p class="text-zinc-400 text-xs leading-relaxed" data-ar="ربط النماذج بقواعد البيانات المتجهة <span dir='ltr' class='font-mono text-[11px] text-zinc-300'>(Chroma / Qdrant)</span> لاسترجاع المعلومات من المستندات بدقة وتقليل الأخطاء." data-en="Connecting models with vector databases <span dir='ltr' class='font-mono text-[11px] text-zinc-300'>(Chroma / Qdrant)</span> to retrieve accurate answers from custom documents.">
+              ربط النماذج بقواعد البيانات المتجهة <span dir="ltr" class="font-mono text-[11px] text-zinc-300">(Chroma / Qdrant)</span> لاسترجاع المعلومات من المستندات بدقة وتقليل الأخطاء.
+            </p>
+          </div>
+
+          <!-- Step 04 -->
+          <div class="tech-card p-5 rounded">
+            <div class="flex items-center justify-between mb-4 font-mono">
+              <span dir="ltr" class="text-2xl font-bold text-crimson-500/40">04.</span>
+              <i class="fa-solid fa-bolt text-crimson-500"></i>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2" data-ar="الدمج وبناء الواجهات" data-en="API Integration & Deployment">الدمج وبناء الواجهات</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed" data-ar="تغليف النماذج في واجهات برمجية سريعة عبر <span dir='ltr' class='font-mono text-[11px] text-zinc-300'>FastAPI</span> وتهيئتها للعمل بمرونة ضمن تطبيقات الويب." data-en="Wrapping models into clean REST APIs via <span dir='ltr' class='font-mono text-[11px] text-zinc-300'>FastAPI</span> for seamless integration into web applications.">
+              تغليف النماذج في واجهات برمجية سريعة عبر <span dir="ltr" class="font-mono text-[11px] text-zinc-300">FastAPI</span> وتهيئتها للعمل بمرونة ضمن تطبيقات الويب.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS LAB SECTION -->
+    <section id="projects" class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 text-start">
+          <div>
+            <span dir="ltr" class="text-xs font-mono text-crimson-400 block mb-1">// PROJECTS &amp; IMPLEMENTATIONS</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white" data-ar="المشاريع والتطبيقات البرمجية" data-en="Projects & Software Implementations">المشاريع والتطبيقات البرمجية</h2>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap gap-2 font-mono text-xs">
+            <button class="filter-btn px-3 py-1.5 rounded bg-crimson-600 text-white font-semibold transition-all cursor-pointer" data-filter="all" data-ar="جميع المشاريع (4)" data-en="All Projects (4)">
+              جميع المشاريع (4)
+            </button>
+            <button class="filter-btn px-3 py-1.5 rounded bg-obsidian-900 text-zinc-300 border border-transparent hover:border-zinc-700 transition-all cursor-pointer" data-filter="arabic-nlp" data-ar="معالجة اللغة العربية" data-en="Arabic NLP">
+              معالجة اللغة العربية
+            </button>
+            <button class="filter-btn px-3 py-1.5 rounded bg-obsidian-900 text-zinc-300 border border-transparent hover:border-zinc-700 transition-all cursor-pointer" data-filter="rag" data-ar="أنظمة <bdi dir='ltr'>RAG</bdi>" data-en="RAG Systems">
+              أنظمة <bdi dir='ltr'>RAG</bdi>
+            </button>
+            <button class="filter-btn px-3 py-1.5 rounded bg-obsidian-900 text-zinc-300 border border-transparent hover:border-zinc-700 transition-all cursor-pointer" data-filter="llm" data-ar="ضبط النماذج اللغوية" data-en="LLM Fine-Tuning">
+              ضبط النماذج اللغوية
+            </button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-start">
+
+          <!-- Project 1 -->
+          <article class="project-item tech-card p-6 rounded flex flex-col justify-between" data-category="arabic-nlp">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3 font-mono text-xs">
+                <span dir="ltr" class="px-2 py-0.5 rounded bg-crimson-500/10 text-crimson-400 border border-crimson-500/20">
+                  MARBERTv2 // Arabic NER
+                </span>
+                <span dir="ltr" class="text-zinc-400 text-[11px]">NLP Pipeline</span>
+              </div>
+
+              <h3 class="text-lg font-bold text-white mb-2" data-ar="نظام استخراج الكيانات وتصنيف النصوص العربية" data-en="Arabic Named Entity Recognition & Text Classifier">
+                نظام استخراج الكيانات وتصنيف النصوص العربية
+              </h3>
+
+              <p class="text-zinc-400 text-xs leading-relaxed mb-4" data-ar="تطبيق يعتمد على نموذج <bdi dir='ltr'>MARBERTv2</bdi> لتنظيف النصوص العربية، معالجة اللواصق، واستخراج أسماء الأشخاص والأماكن والمنظمات من المقالات والبيانات النصية." data-en="Application built on MARBERTv2 to clean Arabic text, handle morphological prefixes/suffixes, and extract persons, locations, and organizations from articles.">
+                تطبيق يعتمد على نموذج <bdi dir='ltr'>MARBERTv2</bdi> لتنظيف النصوص العربية، معالجة اللواصق، واستخراج أسماء الأشخاص والأماكن والمنظمات من المقالات والبيانات النصية.
+              </p>
+            </div>
+
+            <div>
+              <div dir="ltr" class="flex flex-wrap gap-1.5 mb-5 font-mono text-[11px]">
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">PyTorch</span>
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">CAMeL-Tools</span>
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">HuggingFace</span>
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">FastAPI</span>
+              </div>
+
+              <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs font-mono">
+                <button type="button" class="open-project-modal text-crimson-500 hover:text-crimson-400 flex items-center gap-1.5 transition-colors font-bold cursor-pointer"
+                  data-title-ar="نظام استخراج الكيانات وتصنيف النصوص العربية"
+                  data-title-en="Arabic Named Entity Recognition & Text Classifier"
+                  data-badge="MARBERTv2 // ARABIC NLP"
+                  data-summary-ar="أداة برمجية لتحليل النصوص العربية واستخراج الكيانات الأساسية وتصنيف محتواها تلقائياً."
+                  data-summary-en="Software tool for analyzing Arabic texts, extracting key entities, and classifying content automatically."
+                  data-arch-ar="تنظيف وتوحيد النصوص باستخدام CAMeL Tools، ثم تمريرها على نموذج MARBERTv2 مضبوط لاستخراج الكيانات وإرجاع النتيجة بصيغة JSON عبر FastAPI."
+                  data-arch-en="Text normalization via CAMeL Tools, followed by inference using a fine-tuned MARBERTv2 model exposed via a FastAPI JSON endpoint."
+                  data-notes="Supports Modern Standard Arabic (MSA) and common Levantine/Gulf expressions."
+                  data-stack="Python, PyTorch, CAMeL Tools, HuggingFace Transformers, FastAPI">
+                  <span data-ar="[تفاصيل المشروع]" data-en="[Project Details]">[تفاصيل المشروع]</span>
+                  <i class="fa-solid fa-arrow-left direction-arrow text-[10px]"></i>
+                </button>
+                <span dir="ltr" class="text-zinc-500 text-[11px]">REST API Ready</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-item tech-card p-6 rounded flex flex-col justify-between" data-category="rag">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3 font-mono text-xs">
+                <span dir="ltr" class="px-2 py-0.5 rounded bg-crimson-500/10 text-crimson-400 border border-crimson-500/20">
+                  RAG System // Vector Search
+                </span>
+                <span dir="ltr" class="text-zinc-400 text-[11px]">Document QA</span>
+              </div>
+
+              <h3 class="text-lg font-bold text-white mb-2" data-ar="مساعد الاستعلام والبحث الدلالي في المستندات" data-en="Semantic Document Search & QA Assistant">
+                مساعد الاستعلام والبحث الدلالي في المستندات
+              </h3>
+
+              <p class="text-zinc-400 text-xs leading-relaxed mb-4" data-ar="نظام استرجاع معزز <bdi dir='ltr'>(RAG)</bdi> يتيح رفع ملفات <bdi dir='ltr'>PDF</bdi> والنصوص العربية والإنجليزية، وتحويلها إلى متجهات <bdi dir='ltr'>(Embeddings)</bdi> للإجابة عن الأسئلة من محتوى الملفات بدقة." data-en="Retrieval-Augmented Generation (RAG) system enabling users to index Arabic and English PDFs into vector embeddings to answer questions directly from source documents.">
+                نظام استرجاع معزز <bdi dir='ltr'>(RAG)</bdi> يتيح رفع ملفات <bdi dir='ltr'>PDF</bdi> والنصوص العربية والإنجليزية، وتحويلها إلى متجهات <bdi dir='ltr'>(Embeddings)</bdi> للإجابة عن الأسئلة من محتوى الملفات بدقة.
+              </p>
+            </div>
+
+            <div>
+              <div dir="ltr" class="flex flex-wrap gap-1.5 mb-5 font-mono text-[11px]">
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">Chroma / Qdrant</span>
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">LangChain</span>
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">BGE-M3</span>
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">Python</span>
+              </div>
+
+              <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs font-mono">
+                <button type="button" class="open-project-modal text-crimson-500 hover:text-crimson-400 flex items-center gap-1.5 transition-colors font-bold cursor-pointer"
+                  data-title-ar="مساعد الاستعلام والبحث الدلالي في المستندات"
+                  data-title-en="Semantic Document Search & QA Assistant"
+                  data-badge="RAG PIPELINE // VECTOR DB"
+                  data-summary-ar="نظام للإجابة عن الأسئلة بالاعتماد الحصري على المستندات المرفقة لتقليل الإجابات غير الدقيقة."
+                  data-summary-en="Document-grounded QA system that strictly retrieves context from uploaded files to minimize inaccurate outputs."
+                  data-arch-ar="تقسيم المستندات إلى مقاطع نصية (Chunking)، توليد متجهات دلالية عبر BGE-M3، تخزينها في Qdrant، واسترجاع المقاطع الأكثر صلة لصياغة الإجابة."
+                  data-arch-en="Document chunking, generating multilingual embeddings with BGE-M3, storing in Qdrant, and retrieving top-k relevant chunks for answer synthesis."
+                  data-notes="Supports bilingual Arabic/English document retrieval with source chunk citations."
+                  data-stack="Python, LangChain, Qdrant, BGE-M3, PyMuPDF, FastAPI">
+                  <span data-ar="[تفاصيل المشروع]" data-en="[Project Details]">[تفاصيل المشروع]</span>
+                  <i class="fa-solid fa-arrow-left direction-arrow text-[10px]"></i>
+                </button>
+                <span dir="ltr" class="text-zinc-500 text-[11px]">Bilingual Support</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-item tech-card p-6 rounded flex flex-col justify-between" data-category="llm">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3 font-mono text-xs">
+                <span dir="ltr" class="px-2 py-0.5 rounded bg-crimson-500/10 text-crimson-400 border border-crimson-500/20">
+                  LLM Fine-Tuning // QLoRA
+                </span>
+                <span dir="ltr" class="text-zinc-400 text-[11px]">PEFT Adaptation</span>
+              </div>
+
+              <h3 class="text-lg font-bold text-white mb-2" data-ar="تكييف النماذج اللغوية للشرح البرمجي باللغة العربية" data-en="Fine-Tuning Open LLMs for Arabic Technical Explanations">
+                تكييف النماذج اللغوية للشرح البرمجي باللغة العربية
+              </h3>
+
+              <p class="text-zinc-400 text-xs leading-relaxed mb-4" data-ar="تطبيق تقنية <bdi dir='ltr'>QLoRA</bdi> لتدريب وتخصيص نماذج لغوية مفتوحة المصدر على بيانات تعليمية برمجية، بهدف تحسين جودة الشرح التقني باللغة العربية." data-en="Applying QLoRA techniques to fine-tune open-source language models on programming datasets to improve technical explanations in Arabic.">
+                تطبيق تقنية <bdi dir='ltr'>QLoRA</bdi> لتدريب وتخصيص نماذج لغوية مفتوحة المصدر على بيانات تعليمية برمجية، بهدف تحسين جودة الشرح التقني باللغة العربية.
+              </p>
+            </div>
+
+            <div>
+              <div dir="ltr" class="flex flex-wrap gap-1.5 mb-5 font-mono text-[11px]">
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">Unsloth</span>
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">PEFT / LoRA</span>
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">HuggingFace TRL</span>
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">PyTorch</span>
+              </div>
+
+              <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs font-mono">
+                <button type="button" class="open-project-modal text-crimson-500 hover:text-crimson-400 flex items-center gap-1.5 transition-colors font-bold cursor-pointer"
+                  data-title-ar="تكييف النماذج اللغوية للشرح البرمجي باللغة العربية"
+                  data-title-en="Fine-Tuning Open LLMs for Arabic Technical Explanations"
+                  data-badge="LLM FINE-TUNING // QLORA"
+                  data-summary-ar="تدريب محولات LoRA لتخصيص استجابات النماذج اللغوية في المجالات البرمجية والأكاديمية باللغة العربية."
+                  data-summary-en="Training LoRA adapters to specialize open LLM outputs for Arabic programming and academic instruction."
+                  data-arch-ar="تجهيز بيانات التعليمات (Instruction Dataset) بصيغة منظمة وتدريب النموذج بتكميم 4-bit لتقليل استهلاك الذاكرة أثناء التدريب."
+                  data-arch-en="Structuring instruction-response pairs and training adapters using 4-bit quantization via Unsloth and TRL."
+                  data-notes="Optimized for consumer GPUs using 4-bit NormalFloat quantization."
+                  data-stack="PyTorch, Unsloth, HuggingFace TRL, PEFT, BitsAndBytes">
+                  <span data-ar="[تفاصيل المشروع]" data-en="[Project Details]">[تفاصيل المشروع]</span>
+                  <i class="fa-solid fa-arrow-left direction-arrow text-[10px]"></i>
+                </button>
+                <span dir="ltr" class="text-zinc-500 text-[11px]">4-bit Quantized</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-item tech-card p-6 rounded flex flex-col justify-between" data-category="arabic-nlp">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3 font-mono text-xs">
+                <span dir="ltr" class="px-2 py-0.5 rounded bg-crimson-500/10 text-crimson-400 border border-crimson-500/20">
+                  AraT5 // Text Summarization
+                </span>
+                <span dir="ltr" class="text-zinc-400 text-[11px]">Seq2Seq NLP</span>
+              </div>
+
+              <h3 class="text-lg font-bold text-white mb-2" data-ar="أداة تلخيص المقالات واستخراج الكلمات المفتاحية" data-en="Arabic Article Summarizer & Keyword Extractor">
+                أداة تلخيص المقالات واستخراج الكلمات المفتاحية
+              </h3>
+
+              <p class="text-zinc-400 text-xs leading-relaxed mb-4" data-ar="استخدام نموذج <bdi dir='ltr'>AraT5</bdi> لتلخيص النصوص الطويلة وتوليد ملخصات مركزة مع استخراج أبرز الكلمات المفتاحية للمساعدة في فهرسة المحتوى العربي." data-en="Utilizing AraT5 to condense long Arabic articles into concise summaries alongside automated keyword extraction for content indexing.">
+                استخدام نموذج <bdi dir='ltr'>AraT5</bdi> لتلخيص النصوص الطويلة وتوليد ملخصات مركزة مع استخراج أبرز الكلمات المفتاحية للمساعدة في فهرسة المحتوى العربي.
+              </p>
+            </div>
+
+            <div>
+              <div dir="ltr" class="flex flex-wrap gap-1.5 mb-5 font-mono text-[11px]">
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">AraT5</span>
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">Transformers</span>
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">KeyBERT</span>
+                <span class="px-2 py-0.5 rounded bg-obsidian-950 text-zinc-400 border border-zinc-800">Python</span>
+              </div>
+
+              <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs font-mono">
+                <button type="button" class="open-project-modal text-crimson-500 hover:text-crimson-400 flex items-center gap-1.5 transition-colors font-bold cursor-pointer"
+                  data-title-ar="أداة تلخيص المقالات واستخراج الكلمات المفتاحية"
+                  data-title-en="Arabic Article Summarizer & Keyword Extractor"
+                  data-badge="ARAT5 // SUMMARIZATION"
+                  data-summary-ar="خدمة لمعالجة المقالات العربية الطويلة وتوليد ملخصات واضحة وكلمات مفتاحية دلالية."
+                  data-summary-en="Service for processing long Arabic articles to produce clear summaries and semantic keywords."
+                  data-arch-ar="استخدام بنية Encoder-Decoder في نموذج AraT5 مع ضبط معاملات التوليد (Beam Search) لمنع التكرار، ودمج KeyBERT لاستخراج الكلمات المفتاحية."
+                  data-arch-en="Leveraging AraT5 Encoder-Decoder architecture with repetition-penalized Beam Search alongside KeyBERT for keyword extraction."
+                  data-notes="Ideal for academic abstracts, news aggregation, and quick document previews."
+                  data-stack="AraT5, HuggingFace Transformers, KeyBERT, Python">
+                  <span data-ar="[تفاصيل المشروع]" data-en="[Project Details]">[تفاصيل المشروع]</span>
+                  <i class="fa-solid fa-arrow-left direction-arrow text-[10px]"></i>
+                </button>
+                <span dir="ltr" class="text-zinc-500 text-[11px]">Text Processing</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS MATRIX SECTION -->
+    <section id="skills" class="py-16 bg-obsidian-900/40 border-y border-zinc-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span dir="ltr" class="text-xs font-mono text-crimson-400 block mb-1">// TECHNICAL STACK</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white" data-ar="المهارات والأدوات البرمجية" data-en="Technical Stack & Tools">المهارات والأدوات البرمجية</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-start">
+          
+          <!-- Column 1 -->
+          <div class="tech-card p-6 rounded space-y-4">
+            <div class="flex items-center gap-3 pb-3 border-b border-zinc-800">
+              <i class="fa-solid fa-language text-crimson-500 text-lg"></i>
+              <div>
+                <h3 class="text-sm font-bold text-white" data-ar="أطر عمل <bdi dir='ltr'>NLP</bdi> والنماذج اللغوية" data-en="NLP & LLMs Frameworks">أطر عمل <bdi dir='ltr'>NLP</bdi> والنماذج اللغوية</h3>
+                <span dir="ltr" class="text-[11px] font-mono text-zinc-400">Text Processing &amp; Adaptation</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 font-mono text-xs pt-1" dir="ltr">
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">HuggingFace Transformers</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">AraBERT / MARBERT</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">CAMeL Tools</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">PEFT / LoRA / QLoRA</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">Unsloth / TRL</span>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="tech-card p-6 rounded space-y-4">
+            <div class="flex items-center gap-3 pb-3 border-b border-zinc-800">
+              <i class="fa-solid fa-brain text-crimson-500 text-lg"></i>
+              <div>
+                <h3 class="text-sm font-bold text-white" data-ar="البرمجة والتعلم العميق" data-en="Programming & Deep Learning">البرمجة والتعلم العميق</h3>
+                <span dir="ltr" class="text-[11px] font-mono text-zinc-400">Core Languages &amp; Libraries</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 font-mono text-xs pt-1" dir="ltr">
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">Python</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">PyTorch</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">Scikit-Learn</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">Pandas &amp; NumPy</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">C++ / Java</span>
+            </div>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="tech-card p-6 rounded space-y-4">
+            <div class="flex items-center gap-3 pb-3 border-b border-zinc-800">
+              <i class="fa-solid fa-server text-crimson-500 text-lg"></i>
+              <div>
+                <h3 class="text-sm font-bold text-white" data-ar="أنظمة <bdi dir='ltr'>RAG</bdi> وتطوير الواجهات" data-en="RAG & Backend Development">أنظمة <bdi dir='ltr'>RAG</bdi> وتطوير الواجهات</h3>
+                <span dir="ltr" class="text-[11px] font-mono text-zinc-400">Vector Search &amp; APIs</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 font-mono text-xs pt-1" dir="ltr">
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">LangChain</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">Qdrant / Chroma DB</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">FastAPI</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">Git &amp; Linux</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian-950 text-zinc-200 border border-zinc-800">HTML / Tailwind / JS</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          
+          <!-- Channels -->
+          <div class="lg:col-span-5 space-y-5 text-start">
+            <div>
+              <span dir="ltr" class="text-xs font-mono text-crimson-400 block mb-1">// DIRECT CHANNELS</span>
+              <h2 class="text-2xl sm:text-3xl font-bold text-white" data-ar="قنوات التواصل المباشر" data-en="Direct Contact Channels">قنوات التواصل المباشر</h2>
+              <p class="text-zinc-400 text-xs sm:text-sm mt-2 leading-relaxed" data-ar="للتواصل بخصوص المشاريع البرمجية، تطوير حلول معالجة اللغة العربية، أو بناء أنظمة <bdi dir='ltr'>RAG</bdi>." data-en="Get in touch regarding software projects, Arabic NLP solutions, or building RAG systems.">
+                للتواصل بخصوص المشاريع البرمجية، تطوير حلول معالجة اللغة العربية، أو بناء أنظمة <bdi dir='ltr'>RAG</bdi>.
+              </p>
+            </div>
+
+            <!-- Email Card -->
+            <a href="mailto:karam760li@gmail.com" class="tech-card block p-4 rounded group">
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded bg-crimson-500/10 text-crimson-500 flex items-center justify-center text-lg">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="text-[11px] font-mono text-zinc-400 block" data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</span>
+                  <span dir="ltr" class="text-sm font-mono font-bold text-white group-hover:text-crimson-400 transition-colors">
+                    karam760li@gmail.com
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- WhatsApp Card -->
+            <a href="https://wa.me/963985130565" target="_blank" rel="noopener noreferrer" class="tech-card block p-4 rounded group">
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded bg-crimson-500/10 text-crimson-500 flex items-center justify-center text-lg">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div>
+                  <span class="text-[11px] font-mono text-zinc-400 block" data-ar="واتساب" data-en="WhatsApp">واتساب</span>
+                  <span dir="ltr" class="text-sm font-mono font-bold text-white group-hover:text-crimson-400 transition-colors">
+                    +963 985 130 565
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Status Box -->
+            <div class="p-4 rounded bg-obsidian-900 border border-zinc-800 text-xs space-y-1 font-mono">
+              <div class="flex items-center gap-2 text-crimson-400">
+                <i class="fa-solid fa-location-dot"></i>
+                <span dir="ltr">[SYRIA // REMOTE WORK]</span>
+              </div>
+              <p class="text-zinc-400 font-sans text-xs leading-relaxed" data-ar="متاح للعمل عن بُعد والتعاون في المشاريع التقنية." data-en="Available for remote work and technical project collaboration.">
+                متاح للعمل عن بُعد والتعاون في المشاريع التقنية.
+              </p>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="lg:col-span-7">
+            <div class="tech-card p-6 rounded shadow-lg text-start">
+              <h3 class="text-base font-bold text-white mb-5 flex items-center gap-2 font-mono">
+                <i class="fa-solid fa-paper-plane text-crimson-500"></i>
+                <span data-ar="// إرسال رسالة مباشرة" data-en="// Send a Direct Message">// إرسال رسالة مباشرة</span>
+              </h3>
+
+              <form id="contactForm" class="space-y-4" novalidate>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="userName" class="block text-xs font-mono text-zinc-400 mb-1">
+                      <span data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</span> <span class="text-crimson-500">*</span>
+                    </label>
+                    <input type="text" id="userName" dir="auto" required data-ar-placeholder="أدخل اسمك" data-en-placeholder="Enter your name" placeholder="أدخل اسمك"
+                      class="w-full px-3 py-2.5 rounded bg-obsidian-950 border border-zinc-800 text-white text-xs focus:outline-none focus:border-crimson-500 transition-colors" />
+                    <p id="errName" class="text-[11px] text-crimson-500 mt-1 hidden font-mono" data-ar="يرجى كتابة الاسم." data-en="Please enter your name.">يرجى كتابة الاسم.</p>
+                  </div>
+
+                  <div>
+                    <label for="userEmail" class="block text-xs font-mono text-zinc-400 mb-1">
+                      <span data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</span> <span class="text-crimson-500">*</span>
+                    </label>
+                    <input type="email" id="userEmail" dir="ltr" required placeholder="name@domain.com"
+                      class="w-full px-3 py-2.5 rounded bg-obsidian-950 border border-zinc-800 text-white text-xs focus:outline-none focus:border-crimson-500 transition-colors" />
+                    <p id="errEmail" class="text-[11px] text-crimson-500 mt-1 hidden font-mono" data-ar="يرجى كتابة بريد إلكتروني صحيح." data-en="Please enter a valid email.">يرجى كتابة بريد إلكتروني صحيح.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="userTopic" class="block text-xs font-mono text-zinc-400 mb-1" data-ar="موضوع الرسالة" data-en="Topic">
+                    موضوع الرسالة
+                  </label>
+                  <select id="userTopic" dir="auto"
+                    class="w-full px-3 py-2.5 rounded bg-obsidian-950 border border-zinc-800 text-white text-xs focus:outline-none focus:border-crimson-500 transition-colors">
+                    <option dir="auto" value="LLM Fine-Tuning" data-ar="تكييف نموذج لغوي (LLM Fine-Tuning)" data-en="LLM Fine-Tuning">تكييف نموذج لغوي (LLM Fine-Tuning)</option>
+                    <option dir="auto" value="Arabic NLP Pipeline" data-ar="معالجة اللغة العربية (Arabic NLP)" data-en="Arabic NLP">معالجة اللغة العربية (Arabic NLP)</option>
+                    <option dir="auto" value="RAG Architecture" data-ar="نظام استرجاع معزز (RAG System)" data-en="RAG System">نظام استرجاع معزز (RAG System)</option>
+                    <option dir="auto" value="General Inquiry" data-ar="تعاون تقني عام" data-en="General Technical Collaboration">تعاون تقني عام</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="userMsg" class="block text-xs font-mono text-zinc-400 mb-1">
+                    <span data-ar="تفاصيل الرسالة" data-en="Message Details">تفاصيل الرسالة</span> <span class="text-crimson-500">*</span>
+                  </label>
+                  <textarea id="userMsg" dir="auto" rows="4" required data-ar-placeholder="اكتب تفاصيل المشروع أو الاستفسار..." data-en-placeholder="Write your project details or inquiry..." placeholder="اكتب تفاصيل المشروع أو الاستفسار..."
+                    class="w-full px-3 py-2.5 rounded bg-obsidian-950 border border-zinc-800 text-white text-xs focus:outline-none focus:border-crimson-500 transition-colors resize-none"></textarea>
+                  <p id="errMsg" class="text-[11px] text-crimson-500 mt-1 hidden font-mono" data-ar="يرجى كتابة الرسالة." data-en="Please enter the message.">يرجى كتابة الرسالة.</p>
+                </div>
+
+                <button type="submit" id="submitBtn" class="w-full py-3 px-5 rounded bg-crimson-600 hover:bg-crimson-500 text-white font-mono font-semibold text-xs shadow-md shadow-crimson-600/20 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                  <i class="fa-solid fa-terminal"></i>
+                  <span id="submitBtnText" data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Modal -->
+  <div id="archModal" role="dialog" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200">
+    <div id="archModalBox" class="bg-obsidian-900 border border-zinc-800 rounded max-w-xl w-full p-6 shadow-2xl transform scale-95 transition-transform duration-200 relative text-zinc-100 text-start">
+      
+      <button id="closeArchModal" aria-label="إغلاق" class="absolute top-4 start-4 w-8 h-8 rounded bg-obsidian-950 text-zinc-400 hover:text-white hover:bg-crimson-600 transition-colors flex items-center justify-center font-mono cursor-pointer">
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+
+      <span id="modalBadge" dir="ltr" class="text-[11px] font-mono text-crimson-400 bg-crimson-500/10 px-2.5 py-0.5 rounded border border-crimson-500/20 inline-block mb-3"></span>
+      <h3 id="modalTitle" dir="auto" class="text-lg font-bold text-white mb-2"></h3>
+      <p id="modalSummary" dir="auto" class="text-xs text-zinc-300 leading-relaxed mb-4"></p>
+
+      <div class="space-y-3 mb-4 font-mono text-xs">
+        <div class="p-3 rounded bg-obsidian-950 border border-zinc-800">
+          <h4 class="text-crimson-400 font-bold mb-1" data-ar="// آلية التنفيذ:" data-en="// Implementation Details:">// آلية التنفيذ:</h4>
+          <p id="modalArch" dir="auto" class="text-zinc-300 font-sans text-xs leading-relaxed"></p>
+        </div>
+
+        <div class="p-3 rounded bg-obsidian-950 border border-zinc-800">
+          <h4 class="text-ember-400 font-bold mb-1" data-ar="// ملاحظات تقنية:" data-en="// Technical Notes:">// ملاحظات تقنية:</h4>
+          <p id="modalNotes" dir="ltr" class="text-zinc-300 font-mono text-xs leading-relaxed text-left"></p>
+        </div>
+      </div>
+
+      <div>
+        <span class="text-[11px] font-mono text-zinc-400 block mb-1">Tech Stack:</span>
+        <div id="modalStack" dir="ltr" class="p-2.5 rounded bg-obsidian-950 font-mono text-xs text-crimson-400 border border-zinc-800 text-left"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="crimsonToast" class="fixed bottom-6 left-6 z-50 max-w-sm rounded bg-obsidian-900 border border-crimson-500 text-white p-3.5 shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none font-mono text-xs">
+    <div class="w-8 h-8 rounded bg-crimson-600 text-white flex items-center justify-center shrink-0">
+      <i class="fa-solid fa-check text-xs"></i>
+    </div>
+    <div>
+      <h5 class="font-bold" data-ar="تم إرسال الرسالة بنجاح" data-en="Message Sent Successfully">تم إرسال الرسالة بنجاح</h5>
+      <p class="text-[11px] text-zinc-400 mt-0.5 font-sans" data-ar="سيتم الرد في أقرب وقت." data-en="Will reply shortly.">سيتم الرد في أقرب وقت.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800/80 py-6 bg-obsidian-950 text-xs font-mono text-zinc-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-crimson-500"></span>
+        <span dir="ltr" class="text-zinc-300">Karam Hammad &copy; <span id="yearSpan"></span></span>
+      </div>
+      <div class="flex items-center gap-4 text-[11px]" dir="ltr">
+        <span>karam760li@gmail.com</span>
+        <span>+963 985 130 565</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // 1. Footer Year
+    document.getElementById('yearSpan').textContent = new Date().getFullYear();
+
+    // 2. Enforce Permanent Dark Mode
+    const htmlRoot = document.getElementById('htmlRoot');
+    htmlRoot.classList.add('dark');
+    localStorage.removeItem('karam_theme');
+
+    // 3. Language Toggle Engine (Arabic / English)
+    const langToggleBtn = document.getElementById('langToggleBtn');
+    let currentLang = localStorage.getItem('karam_lang');
+    currentLang = currentLang === 'en' ? 'en' : 'ar';
+
+    // Engineering Focus Typewriter Strings
+    let focusAreas = [];
+    function updateFocusAreas(lang) {
+      if (lang === 'en') {
+        focusAreas = [
+          'Arabic NLP & Text Processing',
+          'Retrieval-Augmented Generation (RAG)',
+          'LLM Fine-Tuning (LoRA / QLoRA)',
+          'AI Backend APIs with Python & FastAPI'
+        ];
+      } else {
+        focusAreas = [
+          'معالجة اللغات الطبيعية وتحليل النصوص العربية',
+          'بناء أنظمة الاسترجاع المعزز (RAG)',
+          'تكييف النماذج اللغوية (LoRA / QLoRA)',
+          'تطوير واجهات الذكاء الاصطناعي عبر FastAPI'
+        ];
+      }
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('karam_lang', lang);
+
+      if (lang === 'en') {
+        htmlRoot.setAttribute('lang', 'en');
+        htmlRoot.setAttribute('dir', 'ltr');
+        document.getElementById('langBtnText').textContent = 'AR';
+      } else {
+        htmlRoot.setAttribute('lang', 'ar');
+        htmlRoot.setAttribute('dir', 'rtl');
+        document.getElementById('langBtnText').textContent = 'EN';
+      }
+
+      document.querySelectorAll('[data-ar]').forEach(el => {
+        const val = el.getAttribute(`data-${lang}`);
+        if (val !== null) {
+          el.innerHTML = val;
+          el.setAttribute('dir', 'auto');
+        }
+      });
+
+      document.querySelectorAll('[data-ar-placeholder]').forEach(el => {
+        const val = el.getAttribute(`data-${lang}-placeholder`);
+        if (val) {
+          el.setAttribute('placeholder', val);
+        }
+      });
+
+      updateFocusAreas(lang);
+    }
+
+    updateFocusAreas(currentLang);
+    langToggleBtn.addEventListener('click', () => {
+      setLanguage(currentLang === 'ar' ? 'en' : 'ar');
+    });
+    setLanguage(currentLang);
+
+    // 4. Mobile Navigation
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileDrawer.classList.toggle('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
+    });
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+      mobileDrawer.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    // 5. Typewriter Execution
+    let fIdx = 0, cIdx = 0, deleting = false;
+    const focusEl = document.getElementById('dynamicFocusText');
+
+    function runTypewriter() {
+      const current = focusAreas[fIdx] || focusAreas[0];
+      focusEl.textContent = deleting ? current.slice(0, cIdx--) : current.slice(0, ++cIdx);
+
+      let delay = deleting ? 25 : 55;
+      if (!deleting && cIdx === current.length) {
+        delay = 2000;
+        deleting = true;
+      } else if (deleting && cIdx === 0) {
+        deleting = false;
+        fIdx = (fIdx + 1) % focusAreas.length;
+        delay = 300;
+      }
+      setTimeout(runTypewriter, delay);
+    }
+    runTypewriter();
+
+    // 6. NLP Interactive Demo
+    const nlpSamples = [
+      {
+        text: "أعلنت جامعة دمشق عن إطلاق ورشة عمل متخصصة في تطبيقات الذكاء الاصطناعي ومعالجة اللغة العربية.",
+        textEn: "Damascus University announced a specialized workshop on Artificial Intelligence and Arabic NLP applications.",
+        tokens: ["أعلنت", "جامعة", "دمشق", "عن", "إطلاق", "ورشة", "عمل", "في", "الذكاء", "الاصطناعي"],
+        entities: [
+          { label: "جامعة دمشق", type: "ORG" },
+          { label: "دمشق", type: "LOC" },
+          { label: "الذكاء الاصطناعي", type: "FIELD" }
+        ],
+        category: "Academic / Tech News"
+      },
+      {
+        text: "يعتمد نظام RAG على استرجاع الفقرات ذات الصلة من قاعدة البيانات المتجهة قبل صياغة الإجابة النهائية.",
+        textEn: "A RAG system retrieves relevant chunks from a vector database before generating the final answer.",
+        tokens: ["يعتمد", "نظام", "RAG", "على", "استرجاع", "الفقرات", "من", "قاعدة", "البيانات"],
+        entities: [
+          { label: "RAG", type: "ARCH" },
+          { label: "قاعدة البيانات المتجهة", type: "TECH" }
+        ],
+        category: "Technical Documentation"
+      },
+      {
+        text: "يساعد التلخيص الآلي في اختصار التقارير الطويلة واستخراج الأفكار الأساسية بدقة ووضوح.",
+        textEn: "Automated summarization helps condense long reports and extract key ideas clearly.",
+        tokens: ["يساعد", "التلخيص", "الآلي", "في", "اختصار", "التقارير", "واستخراج", "الأفكار"],
+        entities: [
+          { label: "التلخيص الآلي", type: "TASK" },
+          { label: "التقارير", type: "DOC" }
+        ],
+        category: "NLP Application"
+      }
+    ];
+
+    const simInputBox = document.getElementById('simInputBox');
+    const simTokensContainer = document.getElementById('simTokensContainer');
+    const simNerContainer = document.getElementById('simNerContainer');
+    const simTokenCount = document.getElementById('simTokenCount');
+    const simSentimentLabel = document.getElementById('simSentimentLabel');
+    const sampleBtns = document.querySelectorAll('.nlp-sample-btn');
+
+    let activeSampleIdx = 0;
+    function renderNlpSample(index) {
+      activeSampleIdx = index;
+      const item = nlpSamples[index];
+      simInputBox.textContent = currentLang === 'en' ? item.textEn : item.text;
+      simInputBox.setAttribute('dir', 'auto');
+      simTokenCount.textContent = `${item.tokens.length} Tokens`;
+
+      simTokensContainer.innerHTML = '';
+      item.tokens.forEach((tok) => {
+        const span = document.createElement('span');
+        span.className = 'px-2 py-0.5 rounded text-[11px] font-mono bg-crimson-500/10 text-crimson-300 border border-crimson-500/20';
+        span.setAttribute('dir', 'auto');
+        span.textContent = tok;
+        simTokensContainer.appendChild(span);
+      });
+
+      simNerContainer.innerHTML = '';
+      item.entities.forEach(ent => {
+        const badge = document.createElement('div');
+        badge.className = 'inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-obsidian-950 border border-zinc-800 text-[11px] font-mono';
+        const entityLabel = document.createElement('span');
+        entityLabel.className = 'text-zinc-200 font-sans';
+        entityLabel.setAttribute('dir', 'auto');
+        entityLabel.textContent = ent.label;
+        const entityType = document.createElement('span');
+        entityType.className = 'text-[9px] px-1 bg-crimson-600 text-white rounded';
+        entityType.setAttribute('dir', 'ltr');
+        entityType.textContent = ent.type;
+        badge.append(entityLabel, entityType);
+        simNerContainer.appendChild(badge);
+      });
+
+      simSentimentLabel.textContent = item.category;
+    }
+
+    sampleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        sampleBtns.forEach(b => b.className = 'nlp-sample-btn px-2.5 py-1 rounded bg-obsidian-800 hover:bg-zinc-800 text-zinc-300 font-medium transition-all cursor-pointer');
+        btn.className = 'nlp-sample-btn px-2.5 py-1 rounded bg-crimson-600 text-white font-medium transition-all cursor-pointer';
+        renderNlpSample(Number(btn.getAttribute('data-index')));
+      });
+    });
+    renderNlpSample(0);
+
+    langToggleBtn.addEventListener('click', () => {
+      setTimeout(() => renderNlpSample(activeSampleIdx), 50);
+    });
+
+    // 7. Project Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.className = 'filter-btn px-3 py-1.5 rounded bg-obsidian-900 text-zinc-300 border border-transparent hover:border-zinc-700 transition-all cursor-pointer');
+        btn.className = 'filter-btn px-3 py-1.5 rounded bg-crimson-600 text-white font-semibold transition-all cursor-pointer';
+
+        const cat = btn.getAttribute('data-filter');
+        projectItems.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-category') === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 8. Project Details Modal
+    const archModal = document.getElementById('archModal');
+    const archModalBox = document.getElementById('archModalBox');
+    const closeArchModal = document.getElementById('closeArchModal');
+
+    document.querySelectorAll('.open-project-modal').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const langKey = currentLang === 'en' ? 'en' : 'ar';
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSummary = document.getElementById('modalSummary');
+        const modalArch = document.getElementById('modalArch');
+        modalTitle.textContent = btn.getAttribute(`data-title-${langKey}`);
+        modalTitle.setAttribute('dir', 'auto');
+        document.getElementById('modalBadge').textContent = btn.getAttribute('data-badge');
+        modalSummary.textContent = btn.getAttribute(`data-summary-${langKey}`);
+        modalSummary.setAttribute('dir', 'auto');
+        modalArch.textContent = btn.getAttribute(`data-arch-${langKey}`);
+        modalArch.setAttribute('dir', 'auto');
+        document.getElementById('modalNotes').textContent = btn.getAttribute('data-notes');
+        document.getElementById('modalStack').textContent = btn.getAttribute('data-stack');
+
+        archModal.classList.remove('hidden');
+        setTimeout(() => {
+          archModal.classList.remove('opacity-0');
+          archModalBox.classList.remove('scale-95');
+        }, 10);
+      });
+    });
+
+    function hideModal() {
+      archModal.classList.add('opacity-0');
+      archModalBox.classList.add('scale-95');
+      setTimeout(() => archModal.classList.add('hidden'), 200);
+    }
+
+    closeArchModal.addEventListener('click', hideModal);
+    archModal.addEventListener('click', (e) => { if (e.target === archModal) hideModal(); });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !archModal.classList.contains('hidden')) {
+        hideModal();
+      }
+    });
+
+    // 9. Contact Form Handling (Direct Mailto Integration)
+    const contactForm = document.getElementById('contactForm');
+    const crimsonToast = document.getElementById('crimsonToast');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nameVal = document.getElementById('userName').value.trim();
+      const emailVal = document.getElementById('userEmail').value.trim();
+      const topicVal = document.getElementById('userTopic').value;
+      const msgVal = document.getElementById('userMsg').value.trim();
+
+      const errName = document.getElementById('errName');
+      const errEmail = document.getElementById('errEmail');
+      const errMsg = document.getElementById('errMsg');
+
+      let valid = true;
+      if (!nameVal) { errName.classList.remove('hidden'); valid = false; } else { errName.classList.add('hidden'); }
+      if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) { errEmail.classList.remove('hidden'); valid = false; } else { errEmail.classList.add('hidden'); }
+      if (!msgVal) { errMsg.classList.remove('hidden'); valid = false; } else { errMsg.classList.add('hidden'); }
+
+      if (valid) {
+        const subject = encodeURIComponent(`[Portfolio Inquiry - ${topicVal}] from ${nameVal}`);
+        const body = encodeURIComponent(`Name: ${nameVal}
+Email: ${emailVal}
+Topic: ${topicVal}
+
+Message:
+${msgVal}`);
+        window.location.href = `mailto:karam760li@gmail.com?subject=${subject}&body=${body}`;
+
+        contactForm.reset();
+        crimsonToast.classList.remove('translate-y-20', 'opacity-0');
+        setTimeout(() => {
+          crimsonToast.classList.add('translate-y-20', 'opacity-0');
+        }, 4000);
+      }
+    });
+  </script>
+</body>
+</html>
